@@ -1,0 +1,32 @@
+.todo-input {
+  padding: rem(12) rem(16);
+  display: flex;
+  background-color: var(--color-surface);
+  column-gap: rem(15);
+
+  &:focus-within {
+    outline: auto;
+  }
+
+  // .todo-input__icon
+  &__icon {
+    order: 1;
+    transition: color 0.3s ease;
+    stroke-width: rem(2);
+  }
+  // .todo-input__input
+  &__input {
+    width: 100%;
+    order: 2;
+    outline: none;
+
+    &::placeholder {
+      color: var(--color-placeholder);
+      font-style: italic;
+    }
+
+    &:placeholder-shown ~ * {
+      color: var(--color-placeholder);
+    }
+  }
+}
