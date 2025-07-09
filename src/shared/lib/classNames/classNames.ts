@@ -1,4 +1,4 @@
-type Class = string | undefined | null;
+type Class = string | undefined | null | false;
 export function cn(...classes: Class[]) {
-  return classes.filter(Boolean).join(' ');
+  if (classes.length) return classes.filter(Boolean).join(' ');
 }
