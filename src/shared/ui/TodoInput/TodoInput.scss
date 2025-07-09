@@ -2,7 +2,7 @@
   padding: rem(12) rem(16);
   display: flex;
   background-color: var(--color-surface);
-  column-gap: rem(15);
+  column-gap: var(--column-gap);
 
   &:focus-within {
     outline: auto;

@@ -1,0 +1,5 @@
+@use '../tools/functions.scss' as *;
+
+:root {
+  --column-gap: #{rem(15)};
+}
