@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,10 +10,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    setupFiles: ['./vitest-setup.ts'],
   },
   resolve: {
     alias: {
-      '@': 'src',
+      '@': path.resolve(__dirname, 'src'), // 'src' как '@'
       app: '/src/app',
       entities: '/src/entities',
       features: '/src/features',
