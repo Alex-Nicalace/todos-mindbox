@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
+import { ThemeDecorator } from '../src/shared/config/storybook';
+
 import 'app/styles/index.scss';
 
 const preview: Preview = {
@@ -17,6 +19,7 @@ const preview: Preview = {
       test: 'todo',
     },
   },
+  decorators: [ThemeDecorator('light')],
 };
 
 export default preview;
