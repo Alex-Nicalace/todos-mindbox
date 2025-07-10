@@ -1,0 +1,11 @@
+.radio-button {
+  padding: rem(10);
+  font-size: rem(16);
+  cursor: pointer;
+  color: var(--color-button-text);
+
+  &:has(input:checked) {
+    outline: auto;
+    outline-color: var(--color-button-outline);
+  }
+}
