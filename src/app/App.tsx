@@ -1,10 +1,7 @@
 import './styles/index.scss';
+
 function App() {
-  return (
-    <>
-      App <a href="">sdgdg</a>
-    </>
-  );
+  return <div className="app light">app</div>;
 }
 
 export default App;

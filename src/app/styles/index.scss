@@ -1,18 +1,27 @@
 @use './base/reset';
 @use './fonts/fonts';
-@use './variables/themes/normal';
+@use './variables/themes/light';
 @use './variables/themes/dark';
 @use './variables/global';
 
 html,
-body {
+body,
+#root {
   height: 100%;
   min-width: $minWidth + px;
 }
+
 body {
-  line-height: normal;
   font-family: $fontFamily;
+  line-height: normal;
   font-size: $fontSize;
+  font-weight: normal;
+
+  overflow-x: hidden;
+}
+
+.app {
+  height: 100%;
   color: var(--color-main-text);
   background-color: var(--color-background);
 }
