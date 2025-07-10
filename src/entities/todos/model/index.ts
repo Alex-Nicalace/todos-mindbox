@@ -1,2 +1,2 @@
-export type { Todo, TodosState, Action } from './types';
 export { todosReducer } from './todosReducer';
+export type { Action, Filter, Todo, TodosState } from './types';

@@ -4,7 +4,7 @@ export interface Todo {
   completed: boolean;
 }
 
-type Filter = 'all' | 'active' | 'completed';
+export type Filter = 'all' | 'active' | 'completed';
 
 export interface TodosState {
   todos: Todo[];
