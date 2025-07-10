@@ -19,6 +19,8 @@
     width: 100%;
     order: 2;
     outline: none;
+    background-color: inherit;
+    color: inherit;
 
     &::placeholder {
       color: var(--color-placeholder);
