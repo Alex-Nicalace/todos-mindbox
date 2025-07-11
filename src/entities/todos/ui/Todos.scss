@@ -1,0 +1,10 @@
+.todos {
+  // .todos__item
+  &__item {
+    padding-block: rem(10);
+    padding-inline: var(--padding-inline, rem(5));
+    &:not(:last-child) {
+      border-bottom: rem(2) solid var(--color-border);
+    }
+  }
+}
