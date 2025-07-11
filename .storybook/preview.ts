@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react-vite';
+import { TodosDecorator } from '../src/entities/todos/config/storybook';
 import { ThemeDecorator } from '../src/shared/config/storybook';
 
 import 'app/styles/index.scss';
@@ -19,7 +20,7 @@ const preview: Preview = {
       test: 'todo',
     },
   },
-  decorators: [ThemeDecorator('light')],
+  decorators: [ThemeDecorator('light'), TodosDecorator],
 };
 
 export default preview;
