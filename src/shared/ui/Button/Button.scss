@@ -1,4 +1,10 @@
 .button {
+  padding-block: rem(10);
   font-size: rem(16);
   color: var(--color-button-text);
+
+  &:active {
+    outline: auto;
+    outline-color: var(--color-button-outline);
+  }
 }
