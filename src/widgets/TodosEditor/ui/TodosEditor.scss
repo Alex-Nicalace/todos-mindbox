@@ -1,0 +1,20 @@
+.todos-editor {
+  --padding-inline: #{rem(16)};
+  background-color: var(--color-surface);
+
+  & > *:not(:last-child) {
+    border-bottom: rem(2) solid var(--color-border);
+  }
+
+  &__input,
+  footer {
+    padding-inline: var(--padding-inline);
+  }
+
+  footer {
+    padding-block: rem(10);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
