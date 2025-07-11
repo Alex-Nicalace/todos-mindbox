@@ -1,0 +1,16 @@
+.todospage {
+  max-width: rem(600);
+  margin: auto;
+  padding: rem(20);
+
+  // .todospage__title
+  &__title {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+  // .todospage__editor
+  &__editor {
+  }
+}
