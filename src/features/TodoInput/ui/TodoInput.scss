@@ -1,5 +1,6 @@
 .todo-input {
   padding: rem(12) rem(16);
+  padding-left: 0;
   display: flex;
   background-color: var(--color-surface);
   column-gap: var(--column-gap);
@@ -10,6 +11,10 @@
 
   // .todo-input__icon
   &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 rem(35);
     order: 1;
     transition: color 0.3s ease;
     stroke-width: rem(2);

@@ -30,7 +30,9 @@ export function TodoInput({ className }: TodoInputProps) {
         onChange={(e) => setTodo(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <ArrowIcon className="todo-input__icon" width={24} height={24} />
+      <span className="todo-input__icon">
+        <ArrowIcon width={24} height={24} />
+      </span>
     </div>
   );
 }
