@@ -16,12 +16,20 @@ const dirname =
 export default defineConfig({
   plugins: [react(), svgr()],
   test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./vitest-setup.ts'],
     projects: [
       {
-        extends: true,
+        extends: true, // 👈 берёт resolve/alias из корня
+        // 👇 Обычные юнит-тесты
+        test: {
+          name: 'unit',
+          globals: true,
+          environment: 'jsdom',
+          setupFiles: ['./vitest-setup.ts'],
+          include: ['src/**/*.test.{ts,tsx}'],
+        },
+      },
+      {
+        extends: true, // 👈 Storybook-проект тоже берёт resolve
         plugins: [
           // The plugin will run tests for the stories defined in your Storybook config
           // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
