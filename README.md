@@ -1,69 +1,58 @@
-# React + TypeScript + Vite
+# Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Тестовое задание: приложение для управления списком задач с фильтрацией, счётчиком активных задач и возможностью очистки завершённых.
 
-Currently, two official plugins are available:
+## Стек
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 + TypeScript
+- React Hooks
+- Собственная библиотека UI-компонентов (storybook)
+- Методология FSD (Feature-Sliced Design)
 
-## Expanding the ESLint configuration
+## Архитектура
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Проект структурирован по FSD:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `entities` — бизнес-сущности (`todos`)
+- `features` — функционал (фильтрация, очистка завершённых)
+- `widgets` — сборка сущностей и фич
+- `pages` — страницы приложения
+- `shared` — переиспользуемые утилиты и компоненты
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Тесты
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Ключевая функциональность покрыта unit-тестами:
+
+- Проверка логики переключения фильтра
+- Тесты чекбоксов / переключения состояния задачи
+- Компоненты протестированы с использованием React Testing Library / Vitest
+
+Storybook настроен как витрина компонентов.
+
+## Запуск проекта
+
+1. Установить зависимости:
+
+```sh
+npm i
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Запустить приложение:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm run start
 ```
+
+3. Запустить Storybook:
+
+```sh
+npm run storybook
+```
+
+4. Запустить тесты:
+
+```
+npm run test
+```
+
+Проект также доступен на [Vercel](https://твой-адрес.vercel.app).
