@@ -13,7 +13,6 @@ const meta = {
   tags: ['autodocs'],
   args: {
     name: 'TodoInput',
-    placeholder: 'What needs to be done?',
   },
 } satisfies Meta<typeof TodoInput>;
 

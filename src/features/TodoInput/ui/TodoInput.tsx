@@ -8,9 +8,10 @@ import './TodoInput.scss';
 
 type TodoInputProps = {
   className?: string;
+  name?: string;
 };
 
-export function TodoInput({ className }: TodoInputProps) {
+export function TodoInput({ className, name }: TodoInputProps) {
   const [todo, setTodo] = useState('');
   const { dispatch } = useTodos();
 
@@ -29,6 +30,7 @@ export function TodoInput({ className }: TodoInputProps) {
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
         onKeyDown={handleKeyDown}
+        name={name}
       />
       <span className="todo-input__icon">
         <ArrowIcon width={24} height={24} />
